@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+</head>
+
+<body>
+  <a-scene background="color:gray">
+
+    <a-camera position="0 5 15"></a-camera>
+
+    <!-------------------------------------------Asset Management------------------------------------------------>
+    <a-assets>      
+
+      <!--Add Code Here-->
+      <a-asset-item id="train-obj" src="./model/tinker.obj">
+      </a-asset-item>
+
+      <a-asset-item id="train-mtl" src="./model/obj.mtl"></a-asset-item>
+
+    </a-assets>
+    
+    
+    <!--------------------------------------OBJ Models----------------------------------------------------------->   
+  
+    <a-entity obj-model="obj:#train-obj; mtl:#train-mtl" position="0 0.15 0"
+    rotation="-90 0 -43" scale="0.1 0.1 0.1"></a-entity>
+    
+    <!-------------------------------------Background----------------------------------------------->
+    
+    <!-- vertical plane. -->
+    <a-plane src="./images/escarpment-south-Mount-Tuwayq-Arabian-Desert-Saudi.webp" position="0 10 -5" height="30" width="50"></a-plane>
+    
+    <!--  ground. -->
+    <a-plane src="./images/desert-sand-whimsical-wavy-patterns-closeup-39903346.webp" height="20" width="50" rotation="-90 0 0"></a-plane>
+    
+    <!------------------------------------Tracks----------------------------------------------------------------->
+
+    <a-box position="0 0 1.5" depth="0.5" width="50" 
+    height="0.5" color="black"></a-box>
+
+    <a-box position="0 0 -0.9" depth="0.5" width="50" 
+    height="0.5" color="black"></a-box>
+    
+  </a-scene>
+</body>
+
+</html>
